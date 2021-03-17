@@ -5,33 +5,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <EditText
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etDescription"
-        android:ems="10"
-        android:hint="Description..." />
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        app:title="">
 
-    <Button
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/ivLogo"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/nav_logo_whiteout" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCaptureImage"
-        android:text="Take Picture" />
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/ivPostImage"
-        tools:srcCompat="@tools:sample/avatars" />
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivPostImage"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/ivPostImage"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:hint="Type a description..." />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnSubmit"
-        android:text="Submit" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivPostImage"
+            android:id="@+id/btnCaptureImage"
+            android:text="Take Picture" />
 
+        <ImageView
+            android:id="@+id/ivPostImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/ic_baseline_image_24" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnCaptureImage"
+            android:id="@+id/btnSubmit"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/btnLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Log out" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+    </RelativeLayout>
 </LinearLayout>

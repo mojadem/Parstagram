@@ -9,25 +9,52 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/nav_logo_whiteout" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:id="@+id/etUsername"
+        android:background="@drawable/et_style"
         android:ems="10"
+        android:padding="10dp"
         android:hint="username" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:id="@+id/etPassword"
+        android:background="@drawable/et_style"
         android:ems="10"
+        android:padding="10dp"
         android:hint="password"
         android:inputType="textPassword" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:id="@+id/btnLogin"
-        android:text="Login" />
+        android:text="Login"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_style"
+        android:backgroundTint="@android:color/holo_blue_light"/>
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnSignUp"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_style"
+        android:backgroundTint="@android:color/holo_green_light"/>
 
 </LinearLayout>
